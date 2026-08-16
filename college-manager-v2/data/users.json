@@ -1,0 +1,11 @@
+[
+  {
+    "id": "admin",
+    "name": "Administrator",
+    "username": "admin",
+    "password": "$2a$10$y0oJvNsja/QcgDQFobrraeZ3A7vr7CMiXq0lYtYr4UXkhuZ9r0iZ6",
+    "branch": "ALL",
+    "role": "admin",
+    "createdAt": "2026-08-16T03:35:12.682Z"
+  }
+]

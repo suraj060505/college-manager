@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>College Manager — Login</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-wrap">
+    <button id="themeToggleBtn" class="theme-toggle top-corner-toggle" onclick="toggleTheme()"></button>
+    <div class="auth-card">
+      <h1>College Manager</h1>
+      <p class="subtitle">Login to continue</p>
+
+      <form id="loginForm">
+        <label>Username</label>
+        <input type="text" id="username" required placeholder="your_username">
+
+        <label>Password</label>
+        <input type="password" id="password" required placeholder="••••••••">
+
+        <button type="submit">Login</button>
+        <p id="error" class="error"></p>
+      </form>
+
+      <p class="switch">New student? <a href="/register.html">Create an account</a></p>
+      <p class="hint">Teacher/Admin accounts are created by an Administrator.</p>
+    </div>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const errorEl = document.getElementById('error');
+      errorEl.textContent = '';
+      try {
+        const res = await fetch('/api/login', {
+          method: 'POST', headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ username, password })
+        });
+        const data = await res.json();
+        if (!res.ok) { errorEl.textContent = data.error || 'Login failed'; return; }
+        if (data.user.role === 'student') window.location.href = '/student.html';
+        else if (data.user.role === 'teacher') window.location.href = '/teacher.html';
+        else window.location.href = '/admin.html';
+      } catch (err) { errorEl.textContent = 'Network error. Try again.'; }
+    });
+  </script>
+</body>
+</html>
