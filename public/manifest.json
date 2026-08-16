@@ -1,0 +1,15 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "College Manager",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "College Manager",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "description": "College Manager is a web-based collage management system for students, teachers and administrators.",
+  "categories": [
+    "education"
+  ]
+}
