@@ -1,26 +1,31 @@
 {
-  "background_color": "#ffffff",
-  "display": "standalone",
+  "id": "/",
   "name": "College Manager",
   "short_name": "College Manager",
-  "orientation": "any",
-  "scope": "/",
-  "start_url": "/",
-  "theme_color": "#ffffff",
   "description": "College Manager is a web-based college management system for students, teachers and administrators.",
+  "lang": "en",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
   "categories": [
     "education"
   ],
   "icons": [
     {
-      "src": "/launchericon-192x192.png",
+      "src": "/launcherIcon-192x192.png",
       "sizes": "192x192",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     },
     {
-      "src": "/launchericon-512x512.png",
+      "src": "/launcherIcon-512x512.png",
       "sizes": "512x512",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
   ]
 }
